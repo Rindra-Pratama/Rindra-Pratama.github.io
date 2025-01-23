@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship with Nadine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="friendship-container">
+        <h1>🌟 Kata kata hari ini apa bang ? 🌟</h1>
+        <p>
+            hai, gua cuma  mau bilang hbd y <br>
+            selamat bhd yg ke anu lihat aja tuh di bawah dah kubuatin umur lo,<br>
+            trus trus gua juga mau bilang makasih, karno lo gua jdi semngat lagi belajar<br>
+            klo liat lu nih, buat gue tuh jadi ter apa ya namanya gatau, jdi kek ter inspirasi bjir<br>
+            aku buat ni 1 hari doang sih, tpi errornya lama yg bagian jamnya lebih trus bjir
+        </p>
+        <p>
+            Today is your special day, gimna konten dah selesai belom ?? dah graduation bjir dri PKUY<br>
+            Let’s continue to apa lgi namnya din yg keluar negri. ohhh itu pasti ngontennya agak brutal dri pkuy<br>
+            Semngat aja Y, happy Birthday!!!.
+        </p>
+        <div class="age-container">
+            <h2>Nadine's Age</h2>
+            <p id="live-age">Calculating...</p>
+        </div>
+        <script>
+             function calculateAge(birthDate) {
+            // Ambil waktu sekarang dengan zona waktu WITA (Asia/Makassar)
+            const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Makassar" }));
+
+            // Perhitungan usia berbasis kalender
+            let years = now.getFullYear() - birthDate.getFullYear();
+            let months = now.getMonth() - birthDate.getMonth();
+            let days = now.getDate() - birthDate.getDate();
+            let hours = now.getHours() - birthDate.getHours();
+            let minutes = now.getMinutes() - birthDate.getMinutes();
+            let seconds = now.getSeconds() - birthDate.getSeconds();
+
+            // Penyesuaian jika nilai negatif
+            if (seconds < 0) {
+                minutes--;
+                seconds += 60;
+            }
+            if (minutes < 0) {
+                hours--;
+                minutes += 60;
+            }
+            if (hours < 0) {
+                days--;
+                hours += 24;
+            }
+            if (days < 0) {
+                months--;
+                const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += previousMonth.getDate();
+            }
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            return `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+        }
+
+        function updateAge() {
+            const birthDate = new Date('2006-01-24T00:00:00+07:00'); // Tanggal lahir Nadine (WITA)
+            const ageElement = document.getElementById("live-age");
+            ageElement.textContent = calculateAge(birthDate);
+        }
+
+        // Perbarui usia setiap detik
+        setInterval(updateAge, 1000);
+        updateAge(); // Panggilan pertama untuk langsung menampilkan usia
+
+        </script>
+        <!-- Tombol navigasi -->
+        <div class="buttons">
+            <a href="Main.html" class="home-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

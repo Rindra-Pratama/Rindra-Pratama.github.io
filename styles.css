@@ -1,0 +1,284 @@
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #1E90FF, #ADD8E6);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Confetti effect */
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.5) 100%);
+    animation: confettiFall 10s infinite linear;
+    z-index: -1;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Title and paragraph */
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    text-shadow: 0 0 15px #80DFFF, 0 0 30px #1E90FF;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0.5rem 0 1.5rem;
+}
+
+/* Button */
+.party-button {
+    background: #007BFF;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.party-button:hover {
+    background: #1E90FF;
+    transform: scale(1.1);
+}
+
+/* Balloons */
+.balloons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    animation: float 5s infinite ease-in-out;
+}
+
+.balloon {
+    width: 60px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    background: #1E90FF;
+    animation: bounce 3s infinite ease-in-out;
+}
+
+.balloon.light-blue {
+    background: #ADD8E6;
+    animation-delay: 0.4s;
+}
+
+.balloon.cyan {
+    background: #00FFFF;
+    animation-delay: 0.8s;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 2px;
+    height: 25px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* Stars */
+.stars {
+    font-size: 2rem;
+    margin-top: 20px;
+    animation: sparkle 2s infinite ease-in-out;
+}
+
+/* Keyframes */
+@keyframes confettiFall {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .balloon {
+        width: 50px;
+        height: 70px;
+    }
+
+    .party-button {
+        font-size: 1rem;
+    }
+}
+/* Friendship container */
+.friendship-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ADD8E6, #1E90FF);
+    color: #fff;
+}
+
+.friendship-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px #ADD8E6, 0 0 30px #1E90FF;
+}
+
+.friendship-container p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Back button */
+.back-button {
+    background: #1E90FF;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.5);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background: #007BFF;
+    transform: scale(1.1);
+}
+/* Buttons container */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Home button */
+.home-button {
+    background: #00BFFF;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.5);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.home-button:hover {
+    background: #1E90FF;
+    transform: scale(1.1);
+}
+.age-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(30, 144, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.age-container h2 {
+    font-size: 2rem;
+    color: #fbfbfb;
+    margin-bottom: 10px;
+}
+
+#live-age {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.friendship-container {
+    position: relative;
+    padding: 20px; /* Ruang di sekitar konten */
+}
+
+.bottom-images {
+    position: relative; /* Tidak lagi absolute karena setiap gambar diatur terpisah */
+}
+        
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons a {
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.buttons a:hover {
+    background-color: #0056b3;
+}
