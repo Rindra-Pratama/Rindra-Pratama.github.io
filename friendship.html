@@ -38,7 +38,7 @@
             let minutes = now.getMinutes() - birthDate.getMinutes();
             let seconds = now.getSeconds() - birthDate.getSeconds();
 
-            // Penyesuaian jika nilai negatif
+           
             if (seconds < 0) {
                 minutes--;
                 seconds += 60;
@@ -65,7 +65,7 @@
         }
 
         function updateAge() {
-            const birthDate = new Date('2006-01-24T00:00:00+07:00'); // Tanggal lahir Nadine (WITA)
+            const birthDate = new Date('2006-01-24T00:00:00+07:00'); 
             const ageElement = document.getElementById("live-age");
             ageElement.textContent = calculateAge(birthDate);
         }
